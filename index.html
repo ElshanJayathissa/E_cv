@@ -6,25 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-CV | Elshan Jayathissa</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-    body {
-        background: url('bac2.gif') no-repeat center center fixed;
-        background-size: cover;
-    }
-</style>
+
+    <style>
+        /* Background */
+        body {
+            background: url('image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Glass buttons - Blue Glass */
+        .glass-btn {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 123, 255, 0.25);
+            border: 1px solid rgba(0, 123, 255, 0.4);
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .glass-btn:hover {
+            background: rgba(0, 123, 255, 0.5);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Fade-in animation for sections */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .fade-in.delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in.delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .fade-in.delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .fade-in.delay-4 {
+            animation-delay: 0.8s;
+        }
+
+        .fade-in.delay-5 {
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section headings animation */
+        h2 {
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 3px;
+            background: #0d6efd;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+        /* Left sidebar fade-in items */
+        .sidebar-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeInLeft 0.8s forwards;
+        }
+
+        .sidebar-item.delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .sidebar-item.delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .sidebar-item.delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="text-gray-900">
 
-    <div class="max-w-6xl mx-auto my-10 shadow-2xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-3">
+    <!-- MAIN CV -->
+    <div class="max-w-6xl mx-auto my-16 shadow-2xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-3 bg-white fade-in">
 
         <!-- LEFT SIDEBAR -->
-        <div class="bg-gray-900 text-white p-6 text-center">
+        <div class="bg-gray-900 text-white p-6 text-center fade-in sidebar-item delay-1">
             <h1 class="text-2xl font-bold tracking-wide">ELSHAN JAYATHISSA</h1>
             <p class="text-sm uppercase text-gray-300">Web Developer</p>
 
@@ -34,25 +134,22 @@
 
             <!-- Contact -->
             <div class="mt-8 text-left">
-                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i
-                        class="fa fa-user mr-2"></i>Contact</h3>
+                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i class="fa fa-user mr-2"></i>Contact</h3>
                 <p><i class="fa fa-phone mr-2"></i>077 520 3783</p>
-                <p><i class="fa fa-envelope mr-2"></i>email@example.com</p>
-                <p><i class="fa fa-location-dot mr-2"></i>Sri Lanka</p>
+                <p><i class="fa fa-envelope mr-2"></i>email.elshan2003@gmail.com</p>
+                <p><i class="fa fa-location-dot mr-2"></i>No:07, Giralagolla, Girandurukotte, Sri Lanka</p>
             </div>
 
             <!-- Languages -->
             <div class="mt-6 text-left">
-                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i
-                        class="fa fa-globe mr-2"></i>Languages</h3>
+                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i class="fa fa-globe mr-2"></i>Languages</h3>
                 <p>English</p>
                 <p>Sinhala</p>
             </div>
 
             <!-- Skills -->
             <div class="mt-6 text-left">
-                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i
-                        class="fa fa-code mr-2"></i>Skills</h3>
+                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i class="fa fa-code mr-2"></i>Skills</h3>
                 <ul class="space-y-1">
                     <li>Laravel</li>
                     <li>HTML / CSS / Bootstrap</li>
@@ -64,19 +161,19 @@
 
             <!-- Reference -->
             <div class="mt-6 text-left">
-                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i
-                        class="fa fa-users mr-2"></i>Reference</h3>
+                <h3 class="text-lg font-semibold border-b border-gray-600 pb-2 mb-3"><i class="fa fa-users mr-2"></i>Reference</h3>
                 <p class="font-semibold">Mr. Ramesh Wickramanayake</p>
                 <p class="text-sm">Consultant - IT Infrastructure</p>
+                <p class="text-sm">EDITEC UK</p>
                 <p class="text-sm">+234 814 2809366</p>
             </div>
         </div>
 
         <!-- RIGHT CONTENT -->
-        <div class="col-span-2 bg-white p-8">
+        <div class="col-span-2 bg-white p-8 fade-in sidebar-item delay-2">
 
             <!-- About -->
-            <div>
+            <div class="fade-in delay-1">
                 <h2 class="text-xl font-bold flex items-center gap-2 border-b pb-2">
                     <i class="fa fa-user-circle"></i> About Me
                 </h2>
@@ -90,126 +187,162 @@
                 </p>
             </div>
 
-            <!-- Education Timeline -->
-            <div class="mt-6">
+            <!-- Education -->
+            <div class="mt-6 fade-in delay-2">
                 <h2 class="text-xl font-bold flex items-center gap-2 border-b pb-2">
                     <i class="fa fa-graduation-cap"></i> Education
                 </h2>
-
-                <div class="mt-4 border-l-4 border-gray-300 pl-4 space-y-4">
+                <div class="mt-4 border-l-4 border-gray-300 pl-6 space-y-4">
                     <div>
-                        <h4 class="font-semibold">B.A. (Hons) Information Technology <span
-                                class="float-right text-sm">2023 - Present</span></h4>
+                        <h4 class="font-semibold">◆ B.A. (Hons) Information Technology 
+                            <span class="float-right text-sm">2023 - Present</span>
+                        </h4>
                         <p class="text-gray-600 text-sm">University of Ruhuna, Matara</p>
                     </div>
-
                     <div>
-                        <h4 class="font-semibold">International Diploma in English <span
-                                class="float-right text-sm">2023 - 2024</span></h4>
+                        <h4 class="font-semibold">◆ International Diploma in English 
+                            <span class="float-right text-sm">2023 - 2024</span>
+                        </h4>
                         <p class="text-gray-600 text-sm">ICBT Campus</p>
                     </div>
-
                     <div>
-                        <h4 class="font-semibold">Business Management Diploma <span class="float-right text-sm">2022 -
-                                2023</span></h4>
+                        <h4 class="font-semibold">◆ Business Management Diploma 
+                            <span class="float-right text-sm">2022 - 2023</span>
+                        </h4>
                         <p class="text-gray-600 text-sm">IMBS Green Campus</p>
                     </div>
-
                     <div>
-                        <h4 class="font-semibold">Advanced Certificate in English <span class="float-right text-sm">2022
-                                - 2023</span></h4>
-                        <p class="text-gray-600 text-sm">Britishway English Academy / Nugegoda</p>
+                        <h4 class="font-semibold">◆ Advanced Certificate in English 
+                            <span class="float-right text-sm">2022 - 2023</span>
+                        </h4>
+                        <p class="text-gray-600 text-sm">Britishway English Academy</p>
                     </div>
-
                     <div>
-                        <h4 class="font-semibold">International Diploma in English <span
-                                class="float-right text-sm">2023 - 2024</span></h4>
-                        <p class="text-gray-600 text-sm">London International Campus / London College of English</p>
+                        <h4 class="font-semibold">◆ International Diploma in English 
+                            <span class="float-right text-sm">2023 - 2024</span>
+                        </h4>
+                        <p class="text-gray-600 text-sm">London International Campus</p>
                     </div>
-
                     <div>
-                        <h4 class="font-semibold">Graphic Designer NVQ L4<span class="float-right text-sm">2022 -
-                                2023</span></h4>
-                        <p class="text-gray-600 text-sm">Lalith Athulathmudali Vocational Training Centre (LAVTC),
-                            Rathmalana</p>
+                        <h4 class="font-semibold">◆ Graphic Designer NVQ L4
+                            <span class="float-right text-sm">2022 - 2023</span>
+                        </h4>
+                        <p class="text-gray-600 text-sm">LAVTC, Rathmalana</p>
                     </div>
-
                 </div>
             </div>
 
             <!-- Projects -->
-            <div class="mt-6">
+            <div class="mt-6 fade-in delay-3">
                 <h2 class="text-xl font-bold flex items-center gap-2 border-b pb-2">
                     <i class="fa fa-diagram-project"></i> Projects
                 </h2>
-                <div class="mt-4 border-l-4 border-gray-300 pl-4 space-y-4">
-
-
-                    <ul class="mt-3 space-y-2 text-gray-700">
-                        <li><span class="font-semibold"> Next-Gen IoT Smart Car Parking System </span><span
-                                class="float-right text-sm">(Completed – 2024 |
-                                Group Project)</span></li>
-                        <li><span class="font-semibold"> BUSGO App - Online Ticket Booking System</span> <span
-                                class="float-right text-sm">(Completed – 2025 |
-                                Group Project)</span></li>
-                        <li><span class="font-semibold"> Vehicle Management System for Pradeshiya Sabha</span> <span
-                                class="float-right text-sm">(Completed – 2026 |
-                                Group Project)</span></li>
-                    </ul>
-                </div>
+                <ul class="mt-4 border-l-4 border-gray-300 pl-6 space-y-4 text-gray-700">
+                    <li>
+                        <span class="font-semibold">◆ Next-Gen IoT Smart Car Parking System</span>
+                        <span class="float-right text-sm">(2024 | Group)</span>
+                    </li>
+                    <li>
+                        <span class="font-semibold">◆ BUSGO App - Online Ticket Booking System</span>
+                        <span class="float-right text-sm">(2025 | Group)</span>
+                    </li>
+                    <li>
+                        <span class="font-semibold">◆ Vehicle Management System for Pradeshiya Sabha</span>
+                        <span class="float-right text-sm">(2026 | Group)</span>
+                    </li>
+                </ul>
             </div>
 
             <!-- Publications -->
-            <div class="mt-6">
+            <div class="mt-6 fade-in delay-4">
                 <h2 class="text-xl font-bold flex items-center gap-2 border-b pb-2">
                     <i class="fa fa-book"></i> Publications
                 </h2>
-                <div class="mt-4 border-l-4 border-gray-300 pl-4 space-y-4">
-                    <p class="mt-3 text-gray-600 text-sm">
-                        <span class="font-semibold">Jayathissa, K. E. D., Vinmuthu, J. L. K., Dilshani, D. M. S., &
-                            Madushani, K. G. R. (2025).</span>
+                <div class="mt-4 border-l-4 border-gray-300 pl-6 space-y-4">
+                    <p class="text-gray-600 text-sm">
+                        ◆ Jayathissa, K. E. D., Vinmuthu, J. L. K., Dilshani, D. M. S., & Madushani, K. G. R. (2025).
                         Next-Gen IoT-Enabled Smart Car Parking System with Automated Slot Detection.
-                        <span class="font-semibold">Author</span>, p. 46. Published in Rasas
+                        <span class="font-semibold">Author</span>, p. 46. Published in Rasas.
                     </p>
                 </div>
             </div>
 
             <!-- Leadership -->
-            <div class="mt-6">
+            <div class="mt-6 mb-10 fade-in delay-5">
                 <h2 class="text-xl font-bold flex items-center gap-2 border-b pb-2">
                     <i class="fa fa-people-group"></i> Community & Leadership
                 </h2>
-                <div class="mt-4 border-l-4 border-gray-300 pl-4 space-y-4">
-                    <ul class="mt-3 space-y-2 text-gray-700">
-                        <li><span class="font-semibold">Leader</span>, Divine Beat Association, Kokmaduwa Church <span
-                                class="float-right text-sm">2022 – Present</span>
-                            <p class="text-gray-600 text-sm">Leading community activities and coordinating team members.
-                            </p>
-                        </li>
-                        <li><span class="font-semibold">Active Member</span>, Campus Crusade for Christ, University of Ruhuna <span
-                                class="float-right text-sm">2023 – Present</span>
-                            <p class="text-gray-600 text-sm">Leading community activities and coordinating team members.
-                            </p>
-                        </li>
-                        <li><span class="font-semibold">Instructor</span>, Gospel Ministry, Mahaweli Church <span
-                                class="float-right text-sm">2019 – Present</span>
-                            <p class="text-gray-600 text-sm">Teaching and mentoring church members in spiritual and organizational activities.
-                            </p>
-                        </li>
-                        <li><span class="font-semibold">Partner / Organizer</span>, Journey Through the Light Program <span
-                                class="float-right text-sm">2025</span>
-                            <p class="text-gray-600 text-sm">Coordinated and organized events and workshops for community engagement.
-                            </p>
-                        </li>
-
-                       
-                    </ul>
-                </div>
+                <ul class="mt-4 border-l-4 border-gray-300 pl-6 space-y-4 text-gray-700">
+                    <li>
+                        <span class="font-semibold">◆ Leader</span>, Divine Beat Association
+                        <span class="float-right text-sm">2022–Present</span>
+                        <p class="text-gray-600 text-sm">Coordinating team and activities.</p>
+                    </li>
+                    <li>
+                        <span class="font-semibold">◆ Active Member</span>, Campus Crusade for Christ  
+                        <span class="float-right text-sm">2023–Present</span>
+                        <p class="text-gray-600 text-sm">Working on community events.</p>
+                    </li>
+                    <li>
+                        <span class="font-semibold">◆ Instructor</span>, Gospel Ministry  
+                        <span class="float-right text-sm">2019–Present</span>
+                        <p class="text-gray-600 text-sm">Teaching and mentoring members.</p>
+                    </li>
+                    <li>
+                        <span class="font-semibold">◆ Partner / Organizer</span>, Journey Through the Light  
+                        <span class="float-right text-sm">2025</span>
+                        <p class="text-gray-600 text-sm">Organized community workshops.</p>
+                    </li>
+                </ul>
             </div>
 
         </div>
 
     </div>
+
+    <!-- BOTTOM BUTTON BAR -->
+    <div class="flex justify-center gap-4 my-10 fade-in delay-5">
+        <button onclick="window.print()" class="glass-btn px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa fa-print"></i> Print / PDF
+        </button>
+
+        <button onclick="shareCV()" class="glass-btn px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa fa-share-alt"></i> Share
+        </button>
+
+        <button onclick="copyPhone()" class="glass-btn px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa fa-phone"></i> Copy Phone
+        </button>
+
+        <button onclick="copyEmail()" class="glass-btn px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+            <i class="fa fa-envelope"></i> Copy Email
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function copyPhone() {
+            navigator.clipboard.writeText("077 520 3783");
+            alert("Phone number copied!");
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText("email.elshan2003@gmail.com");
+            alert("Email copied!");
+        }
+
+        function shareCV() {
+            if (navigator.share) {
+                navigator.share({
+                    title: "Elshan Jayathissa - CV",
+                    text: "Check out my digital CV.",
+                    url: window.location.href
+                });
+            } else {
+                alert("Sharing not supported on this browser.");
+            }
+        }
+    </script>
 
 </body>
 
